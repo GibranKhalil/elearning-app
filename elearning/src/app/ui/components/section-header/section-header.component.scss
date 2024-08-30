@@ -1,0 +1,61 @@
+.container {
+    padding: 20px 24px;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    justify-content: center;
+    max-width: 100%;
+    gap: 16px;
+
+    >header,
+    >section {
+        display: flex;
+        margin: 0;
+    }
+
+    >header {
+        gap: 8px;
+        font-weight: 600;
+
+        >i,
+        >h2 {
+            font-weight: bold;
+        }
+
+    }
+
+    >section {
+        justify-content: space-between;
+
+        >h1 {
+            font-size: 24px;
+            font-weight: bold;
+        }
+    }
+
+}
+
+.topicBtn {
+    display: flex;
+    max-width: fit-content;
+    transition: 0.3s;
+    gap: 4px;
+    padding: 18px 20px;
+    cursor: pointer;
+    border-radius: 15px;
+    border: 2px solid rgba(0, 0, 0.1);
+    text-transform: uppercase;
+    position: absolute;
+    right: 24px;
+    box-shadow: 0px 1px 0px 1px rgba(0, 0, 0.1);
+
+    >p {
+        font-weight: bold;
+    }
+
+    &:active {
+        transform: translateY(5px);
+        box-shadow: none;
+    }
+}

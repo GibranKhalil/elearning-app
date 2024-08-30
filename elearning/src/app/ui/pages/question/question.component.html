@@ -1,0 +1,15 @@
+<HeaderComponent [lessonName]="lessonName" />
+<main class="main">
+    <ProgressBar [currentQuestion]="currentQuestionIndex" [numberOfQuestion]="questions.length"></ProgressBar>
+    <QuestionComponent [isSubmitted]="isSubmitted" [description]="currentQuestion.description"
+        [question]="currentQuestion.question" [alternatives]="currentQuestion.alternatives">
+    </QuestionComponent>
+</main>
+<footer class="footer">
+    <button type="button" (click)="submitOrNext()" [ngClass]="{
+        'correctButton': isCorrectAnswer === true, 
+        'wrongButton': isCorrectAnswer === false
+    }">
+        {{buttonLabel}}
+    </button>
+</footer>

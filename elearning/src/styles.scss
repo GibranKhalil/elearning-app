@@ -1,0 +1,50 @@
+@import './app/ui/styles/colors.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 400;
+    box-sizing: content-box;
+    font-family: 'Poppins';
+    list-style: none;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+body {
+    background-color: $backgroundColor;
+    min-width: 100vw;
+    overflow-x: hidden;
+}
+
+main,
+header {
+    margin: 0 64px;
+}
+
+header {
+    margin-top: 16px;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+.gap-2 {
+    gap: 8px;
+}
+
+.padding-3 {
+    padding: 12px;
+}
+
+.padding-2 {
+    padding: 8px;
+}
+
+.content-between {
+    justify-content: space-between;
+}

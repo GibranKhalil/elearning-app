@@ -1,0 +1,22 @@
+<article class="question">
+    <header>
+        <p>
+            {{description}}
+        </p>
+        <h2>{{question}}</h2>
+    </header>
+    <ol class="alternatives gap-2">
+        @for (alternative of alternatives; track $index) {
+        <li (click)="selectAlternative($index)" [ngClass]="{
+                'alternative--selected': selectedIndex === $index,
+                'correctAnswer': isSubmitted && selectedIndex === $index && alternative.isCorrect,
+                'wrongAnswer': isSubmitted && selectedIndex === $index && !alternative.isCorrect
+            }" class="flex alternative content-between padding-2 border">
+            <p>{{alternative.content}}</p>
+            <button>
+                {{$index+1}}
+            </button>
+        </li>
+        }
+    </ol>
+</article>
