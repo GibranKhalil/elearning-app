@@ -1,11 +1,12 @@
 <HeaderComponent [lessonName]="'Lição Teste'"></HeaderComponent>
 <main class="main">
-    <app-section-header></app-section-header>
+    <app-section-header [color]="currentColor" [sectionName]="currentSectionName"
+        [sectionNumber]="currentSectionNumber"></app-section-header>
 
-    <section class="section">
-        @for (lesson of circles; track $index) {
-        <button [ngStyle]="getCircleStyle($index)" class="circle">
-        </button>
-        }
-    </section>
+    <ng-container *ngFor="let section of sections; let i = index">
+        <CourseSectionComponent [sectionColor]="section.color" [lessonsPathDirection]="i % 2 == 0 ? 1 : -1"
+            [lessons]="section.linkedLessons" [nextSectionName]="sections[i+1] ? sections[i+1].name : undefined"
+            (sectionInView)="onSectionInView(i)">
+        </CourseSectionComponent>
+    </ng-container>
 </main>

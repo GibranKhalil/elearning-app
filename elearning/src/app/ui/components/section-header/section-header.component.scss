@@ -8,11 +8,11 @@
     max-width: 80%;
     min-width: 900px;
     gap: 16px;
-    background-color: #6177F8;
     border-radius: 10px;
     z-index: 10;
     margin: 36px auto;
     margin-bottom: 0;
+    color: #fff;
 
     >header,
     >section {
@@ -26,7 +26,9 @@
 
         >i,
         >h2 {
+            color: rgba(255, 255, 255, 0.5);
             font-weight: bold;
+            cursor: pointer;
         }
 
     }
@@ -50,11 +52,12 @@
     padding: 18px 20px;
     cursor: pointer;
     border-radius: 15px;
-    border: 2px solid rgba(0, 0, 0.1);
+    border: 2px solid rgba(0, 0, 0, 0.2);
     text-transform: uppercase;
     position: absolute;
     right: 24px;
-    box-shadow: 0px 1px 0px 1px rgba(0, 0, 0.1);
+    color: #fff;
+    box-shadow: 0px 1px 0px 1px rgba(0, 0, 0, 0.2);
 
     >p {
         font-weight: bold;

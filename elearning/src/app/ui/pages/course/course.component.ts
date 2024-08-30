@@ -2,28 +2,48 @@ import { Component } from '@angular/core';
 import { HeaderComponent } from "../../components/header/header.component";
 import { SectionHeaderComponent } from "../../components/section-header/section-header.component";
 import { CommonModule } from '@angular/common';
+import { SectionComponent } from "../../components/section/section.component";
+import { Section } from '../../../data/@types/section.type';
+
 @Component({
   selector: 'app-course',
   standalone: true,
-  imports: [HeaderComponent, SectionHeaderComponent, CommonModule],
+  imports: [HeaderComponent, SectionHeaderComponent, CommonModule, SectionComponent],
   templateUrl: './course.component.html',
   styleUrls: ['./course.component.scss']
 })
 export class CoursePage {
+  sections: Section[] = [
+    {
+      name: "Váriaveis",
+      description: "Aprenda sobre váriaveis",
+      id: "",
+      linkedLessons: ["1", "2", "3", "4", "5"],
+      color: '#D161F8'
+    },
+    {
+      name: "Condicionais",
+      description: "Aprenda sobre condicionais",
+      id: "",
+      linkedLessons: ["1", "2", "3", "4", "5"],
+      color: '#6177F8'
+    },
+    {
+      name: "Funções",
+      description: "Aprenda sobre funções",
+      id: "",
+      linkedLessons: ["1", "2", "3", "4", "5"],
+      color: '#E54D2E'
+    }
+  ];
 
-  circles = Array.from({ length: 15 }); // Cria um array com 13 elementos, ajustável
+  currentColor: string = this.sections[0].color;
+  currentSectionName: string = this.sections[0].name;
+  currentSectionNumber: number = 1;
 
-  private leftValues = [0, -40, -70, -40, 0, 40, 70, 40];
-  private topValues = [24, 12, 12, 20];
-
-  getCircleStyle(index: number): { [key: string]: string } {
-    const leftIndex = index % this.leftValues.length;
-    const topIndex = index % this.topValues.length;
-
-    return {
-      'left': `${this.leftValues[leftIndex]}px`,
-      'margin-top': `${this.topValues[topIndex]}px`
-    };
+  onSectionInView(index: number) {
+    this.currentColor = this.sections[index].color;
+    this.currentSectionName = this.sections[index].name;
+    this.currentSectionNumber = index + 1;
   }
-
 }

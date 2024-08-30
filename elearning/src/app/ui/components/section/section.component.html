@@ -1,0 +1,16 @@
+<section class="lessonsContainer">
+    @for (lesson of lessons; track $index) {
+    <button [ngStyle]="getCircleStyle($index)" class="lesson">
+        B
+    </button>
+    }
+</section>
+@if (nextSectionName) {
+<footer class="lessonFooter">
+    <div></div>
+    <h3>
+        {{nextSectionName}}
+    </h3>
+    <div></div>
+</footer>
+}

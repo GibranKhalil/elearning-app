@@ -1,0 +1,58 @@
+.card {
+    padding: 12px;
+    background-color: #fff;
+    border-radius: 5px;
+    max-width: 300px;
+    border: 1px solid #EFF0F3;
+    cursor: pointer;
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    >header {
+        >p {
+            text-transform: uppercase;
+            font-weight: 600;
+            font-size: 12px;
+        }
+    }
+
+    >section {
+        >h3 {
+            font-weight: 600;
+            margin: 4px 0;
+            color: #747474;
+        }
+
+        >div {
+            >div {
+                margin-top: 4px;
+                display: flex;
+                justify-content: space-between;
+
+                >p {
+                    font-size: 12px;
+                    font-weight: 600;
+                    color: #747474;
+                }
+            }
+        }
+    }
+}
+
+.fullbar {
+    min-height: 12px;
+    width: 100%;
+    border-radius: 30px;
+    background-color: #ececec;
+    display: flex;
+    justify-items: start;
+}
+
+.progress {
+    min-height: 12px;
+    border-radius: 30px;
+    transition: height 0.3s ease;
+}

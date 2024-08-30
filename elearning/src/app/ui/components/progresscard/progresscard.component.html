@@ -1,0 +1,18 @@
+<article class="card">
+    <header>
+        <p [ngStyle]="{'color': type === 'CURSO' ? '#6177F8' : '#FFC229'}">{{type}}</p>
+    </header>
+    <section>
+        <h3>{{title}}</h3>
+        <div>
+            <div class="fullbar">
+                <div [ngStyle]="{'background-color': type === 'CURSO' ? '#6177F8' : '#FFC229', 'width': getPercentage()}"
+                    class="progress"></div>
+            </div>
+            <div>
+                <p>{{getPercentage()}} COMPLETO</p>
+                <p>{{completedItens}}/{{totalItens}}</p>
+            </div>
+        </div>
+    </section>
+</article>

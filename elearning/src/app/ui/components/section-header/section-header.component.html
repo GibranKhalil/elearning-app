@@ -1,10 +1,10 @@
-<article class="container">
+<article [ngStyle]="getBackGroundColor()" class="container">
     <header>
         <i class="material-symbols-rounded">arrow_back</i>
-        <h2>Seção 1, Unidade 1</h2>
+        <h2>Seção {{sectionNumber}}</h2>
     </header>
     <section>
-        <h1>Váriaveis</h1>
+        <h1>{{sectionName}}</h1>
     </section>
     <button class="topicBtn">
         <i class="material-symbols-rounded">menu_book</i>
