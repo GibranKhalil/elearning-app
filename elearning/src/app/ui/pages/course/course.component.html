@@ -1,4 +1,11 @@
 <HeaderComponent [lessonName]="'Lição Teste'"></HeaderComponent>
-<main>
+<main class="main">
     <app-section-header></app-section-header>
+
+    <section class="section">
+        @for (lesson of circles; track $index) {
+        <button [ngStyle]="getCircleStyle($index)" class="circle">
+        </button>
+        }
+    </section>
 </main>
