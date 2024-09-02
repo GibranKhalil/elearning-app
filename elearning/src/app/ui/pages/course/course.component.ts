@@ -3,7 +3,7 @@ import { HeaderComponent } from "../../components/header/header.component";
 import { SectionHeaderComponent } from "../../components/section-header/section-header.component";
 import { CommonModule } from '@angular/common';
 import { SectionComponent } from "../../components/section/section.component";
-import { Section } from '../../../data/@types/section.type';
+import { Section } from '../../../data/@types/interfaces/section.interface';
 
 @Component({
   selector: 'app-course',

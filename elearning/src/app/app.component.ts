@@ -10,5 +10,4 @@ import { HeaderComponent } from "./ui/components/header/header.component";
   styleUrl: './app.component.scss'
 })
 export class AppComponent {
-  city:string = 'Hortolândia'
 }

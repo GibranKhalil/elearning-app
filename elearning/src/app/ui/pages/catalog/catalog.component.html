@@ -6,6 +6,9 @@
     </section>
     <section class="section">
         <h2>Formações</h2>
+        @for (lPath of data; track $index) {
+        <p>{{lPath.name}}</p>
+        }
     </section>
     <section class="section">
         <h2>Cursos</h2>

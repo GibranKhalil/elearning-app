@@ -1,5 +1,6 @@
 import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
+import { QuestionType } from '../../../data/@types/enums/question.enum';
 
 @Component({
   selector: 'QuestionComponent',
@@ -11,9 +12,11 @@ import { Component, Input } from '@angular/core';
 export class QuestionComponent {
   @Input() description: string = '';
   @Input() question: string = '';
+  @Input() type: QuestionType = QuestionType.ALTERNATIVE;
   @Input() alternatives: Array<{ content: string, id: string, isCorrect: boolean }> = [];
   @Input() isSubmitted: boolean = false;
   selectedIndex: number | null = null;
+
 
   selectAlternative(index: number) {
     if(!this.isSubmitted){
@@ -35,6 +38,5 @@ export class QuestionComponent {
       this.playSound('/wrongQuestion.mp3');
     }
   }
-
 
 }
